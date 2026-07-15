@@ -841,6 +841,264 @@ export const whyClients: WhyClient[] = [
 
 export type Faq = { question: string; answer: string };
 
+/* ================================================================== *
+ * PROJECTS PAGE
+ * ================================================================== */
+
+export const projectsPage = {
+  hero: {
+    eyebrow: "Our Portfolio",
+    title: "Landmarks that",
+    goldTitle: "define skylines",
+    intro:
+      "A portfolio measured not in square metres, but in skylines reshaped and standards redefined. Explore the projects that carry the Titanium Edge signature.",
+    image: {
+      src: "https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?auto=format&fit=crop&w=2400&q=80",
+      alt: "Cinematic skyline of modern towers at dusk",
+    },
+  },
+};
+
+export type Metric = { label: string; value: string };
+export type FeaturedProject = {
+  title: string;
+  location: string;
+  category: string;
+  year: string;
+  overview: string;
+  metrics: Metric[];
+  image: { src: string; alt: string };
+};
+
+export const featuredLandmarks: FeaturedProject[] = [
+  {
+    title: "Aurelia Financial Tower",
+    location: "New York, USA",
+    category: "Commercial",
+    year: "2023",
+    overview:
+      "A 62-storey headquarters clad in fluted bronze glass, engineered for LEED Platinum performance and a column-free trading floor.",
+    metrics: [
+      { label: "Height", value: "288 m" },
+      { label: "Floors", value: "62" },
+      { label: "Built Area", value: "140,000 m²" },
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
+      alt: "Aurelia Financial Tower — commercial high-rise",
+    },
+  },
+  {
+    title: "The Meridian Residences",
+    location: "Dubai, UAE",
+    category: "Residential",
+    year: "2022",
+    overview:
+      "Two sculpted residential towers linked by a suspended sky bridge, with private elevators and an infinity pool crowning both structures.",
+    metrics: [
+      { label: "Towers", value: "2" },
+      { label: "Residences", value: "320" },
+      { label: "Sky Gardens", value: "4" },
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=80",
+      alt: "The Meridian Residences — luxury residential towers",
+    },
+  },
+  {
+    title: "Vantage Cable Bridge",
+    location: "Lisbon, Portugal",
+    category: "Infrastructure",
+    year: "2021",
+    overview:
+      "A 1.2 km cable-stayed crossing with twin diamond pylons, engineered for seismic resilience and record clear spans.",
+    metrics: [
+      { label: "Span", value: "1.2 km" },
+      { label: "Pylons", value: "2" },
+      { label: "Capacity", value: "80k/day" },
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=1600&q=80",
+      alt: "Vantage Cable Bridge — infrastructure landmark",
+    },
+  },
+  {
+    title: "Northgate Logistics Park",
+    location: "Rotterdam, NL",
+    category: "Industrial",
+    year: "2024",
+    overview:
+      "A fully automated 340,000 m² logistics campus with robotic fulfilment, rail-served distribution, and a 12 MW solar canopy.",
+    metrics: [
+      { label: "Area", value: "340,000 m²" },
+      { label: "Solar", value: "12 MW" },
+      { label: "Bays", value: "180" },
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80",
+      alt: "Northgate Logistics Park — industrial facility",
+    },
+  },
+];
+
+export type PortfolioItem = {
+  title: string;
+  location: string;
+  category: string;
+  image: { src: string; alt: string };
+};
+
+export const portfolioCategories = [
+  "All",
+  "Commercial",
+  "Residential",
+  "Industrial",
+  "Infrastructure",
+  "Hospitality",
+  "Healthcare",
+  "Education",
+] as const;
+
+export const portfolioProjects: PortfolioItem[] = [
+  { title: "Aurelia Financial Tower", location: "New York, USA", category: "Commercial", image: { src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80", alt: "Aurelia Financial Tower" } },
+  { title: "Skyline Corporate Center", location: "Chicago, USA", category: "Commercial", image: { src: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1000&q=80", alt: "Skyline Corporate Center" } },
+  { title: "The Meridian Residences", location: "Dubai, UAE", category: "Residential", image: { src: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1000&q=80", alt: "The Meridian Residences" } },
+  { title: "Cedar Grove Estates", location: "Aspen, USA", category: "Residential", image: { src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80", alt: "Cedar Grove Estates" } },
+  { title: "Northgate Logistics Park", location: "Rotterdam, NL", category: "Industrial", image: { src: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=80", alt: "Northgate Logistics Park" } },
+  { title: "Ironworks Manufacturing Hub", location: "Detroit, USA", category: "Industrial", image: { src: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1000&q=80", alt: "Ironworks Manufacturing Hub" } },
+  { title: "Vantage Cable Bridge", location: "Lisbon, PT", category: "Infrastructure", image: { src: "https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=1000&q=80", alt: "Vantage Cable Bridge" } },
+  { title: "Harbor Transit Line", location: "Singapore", category: "Infrastructure", image: { src: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1000&q=80", alt: "Harbor Transit Line" } },
+  { title: "Aurora Grand Hotel", location: "Kyoto, JP", category: "Hospitality", image: { src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80", alt: "Aurora Grand Hotel" } },
+  { title: "St. Vincent Medical Center", location: "Toronto, CA", category: "Healthcare", image: { src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80", alt: "St. Vincent Medical Center" } },
+  { title: "Helix Science Campus", location: "Zurich, CH", category: "Education", image: { src: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=80", alt: "Helix Science Campus" } },
+  { title: "Grand Meridian Resort", location: "Maldives", category: "Hospitality", image: { src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80", alt: "Grand Meridian Resort" } },
+];
+
+export type CaseStudyPhase = { label: string; title: string; description: string; image: { src: string; alt: string } };
+
+export const caseStudy = {
+  eyebrow: "Case Study",
+  title: "Aurelia Financial Tower",
+  location: "New York, USA",
+  year: "2023",
+  category: "Commercial",
+  intro:
+    "How Titanium Edge delivered a record column-free trading floor inside one of Manhattan's most demanding sites — on time and to LEED Platinum.",
+  phases: [
+    {
+      label: "01 — The Challenge",
+      title: "A column-free floor on a constrained site",
+      description:
+        "The client demanded a 4,000 m² trading floor with no internal columns, above active transit tunnels and within a tight urban footprint — a structural and logistical puzzle.",
+      image: { src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80", alt: "Constrained urban construction site" },
+    },
+    {
+      label: "02 — Planning & Engineering",
+      title: "A digital twin resolved every clash",
+      description:
+        "A full BIM model and digital twin coordinated structure, MEP, and transit protection. Long-span steel trusses and tuned mass dampers were engineered to carry the floor and control sway.",
+      image: { src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80", alt: "Engineers reviewing a digital model" },
+    },
+    {
+      label: "03 — Construction",
+      title: "Precision execution, zero harm",
+      description:
+        "Top-down construction and just-in-time steel delivery kept the dense site moving safely. The superstructure topped out two weeks ahead of a 34-month program.",
+      image: { src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80", alt: "Steel superstructure under construction" },
+    },
+    {
+      label: "04 — The Result",
+      title: "A new benchmark for the district",
+      description:
+        "A LEED Platinum landmark delivering the column-free floor the client envisioned — now the highest-performing commercial address in its district.",
+      image: { src: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=80", alt: "Completed commercial tower facade" },
+    },
+  ] as CaseStudyPhase[],
+  stats: [
+    { value: 288, suffix: " m", label: "Final Height" },
+    { value: 34, suffix: " mo", label: "Delivery Program" },
+    { value: 1800, suffix: "+", label: "Peak Workforce" },
+    { value: 0, label: "Lost-Time Incidents" },
+  ] as Stat[],
+  outcome:
+    "“Titanium Edge turned an impossible brief into our flagship address — delivered early, under budget, and beyond specification.”",
+  outcomeBy: "Eleanor Whitfield · Chief Development Officer, Harborline Group",
+};
+
+export type GalleryImage = { src: string; alt: string; span: "tall" | "wide" | "square" };
+
+export const galleryImages: GalleryImage[] = [
+  { src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80", alt: "Commercial tower detail", span: "tall" },
+  { src: "https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=1200&q=80", alt: "Bridge infrastructure", span: "wide" },
+  { src: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80", alt: "Residential towers", span: "square" },
+  { src: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80", alt: "Industrial facility interior", span: "wide" },
+  { src: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1200&q=80", alt: "Architectural facade", span: "tall" },
+  { src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80", alt: "Tower cranes at dusk", span: "square" },
+  { src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80", alt: "Steel structure", span: "wide" },
+  { src: "https://images.unsplash.com/photo-1494522358652-f30e61a60313?auto=format&fit=crop&w=1200&q=80", alt: "Skyscraper under construction", span: "tall" },
+];
+
+export const achievements: Stat[] = [
+  { value: 240, suffix: "+", label: "Landmark Projects" },
+  { value: 28, label: "Years of Experience" },
+  { value: 40, suffix: "+", label: "Countries Served" },
+  { value: 850, suffix: "+", label: "Professionals" },
+  { value: 32, label: "Industry Awards" },
+  { value: 99, suffix: "%", label: "Client Satisfaction" },
+  { value: 12, suffix: "M+", label: "Square Meters Built" },
+];
+
+export type SuccessStory = {
+  name: string;
+  company: string;
+  project: string;
+  rating: number;
+  review: string;
+};
+
+export const successStories: SuccessStory[] = [
+  {
+    name: "Eleanor Whitfield",
+    company: "Harborline Group",
+    project: "Aurelia Financial Tower",
+    rating: 5,
+    review:
+      "They turned an impossible brief into our flagship address — delivered early, under budget, and beyond specification.",
+  },
+  {
+    name: "Marcus Delacroix",
+    company: "Delacroix Capital",
+    project: "The Meridian Residences",
+    rating: 5,
+    review:
+      "Every phase felt effortless because their planning was flawless. Our investors had complete confidence throughout.",
+  },
+  {
+    name: "Aisha Rahman",
+    company: "Meridian Authority",
+    project: "Vantage Cable Bridge",
+    rating: 5,
+    review:
+      "A complex, high-risk crossing handled with remarkable calm and precision. Safety and quality were never compromised.",
+  },
+  {
+    name: "Johan Berg",
+    company: "Northgate Industries",
+    project: "Northgate Logistics Park",
+    rating: 5,
+    review:
+      "The most technically capable contractor we have worked with. Their digital-twin approach eliminated costly surprises.",
+  },
+  {
+    name: "Sofia Marchetti",
+    company: "Studio Marchetti",
+    project: "Aurora Grand Hotel",
+    rating: 5,
+    review:
+      "They protected the integrity of our design at every turn. Craftsmanship of this calibre is exceptionally rare.",
+  },
+];
+
 export const faqs: Faq[] = [
   {
     question: "What types of projects does Titanium Edge take on?",
