@@ -670,3 +670,206 @@ export const safetyStats: Stat[] = [
   { value: 50, suffix: "+", label: "LEED-Certified Projects" },
   { value: 100, suffix: "%", label: "ISO-Compliant Delivery" },
 ];
+
+/* ================================================================== *
+ * SERVICES PAGE
+ * ================================================================== */
+
+export const servicesPage = {
+  hero: {
+    eyebrow: "Our Services",
+    title: "Every discipline of",
+    goldTitle: "construction, mastered",
+    intro:
+      "From the first blueprint to the final handover, Titanium Edge delivers the full spectrum of construction and engineering — each project treated as a landmark in the making.",
+    image: {
+      src: "https://images.unsplash.com/photo-1494522358652-f30e61a60313?auto=format&fit=crop&w=2400&q=80",
+      alt: "Cinematic view of a commercial skyscraper under construction",
+    },
+  },
+  intro: {
+    eyebrow: "Our Philosophy",
+    title: "One standard applied to every project we touch",
+    lead:
+      "Whatever the scale or sector, our approach never changes: disciplined engineering, relentless attention to detail, and a partnership built on trust.",
+    pillars: [
+      { title: "Engineering Precision", description: "Millimetre-accurate execution, modelled and verified before we build." },
+      { title: "Innovation", description: "Digital tools and new methods that raise what's possible." },
+      { title: "Planning", description: "Rigorous programming that protects budget and schedule." },
+      { title: "Collaboration", description: "One aligned team across client, architect, and trades." },
+      { title: "Safety", description: "A zero-harm culture on every site, every day." },
+      { title: "Quality", description: "Detailing and finish worthy of the most demanding clients." },
+    ],
+  },
+};
+
+export type CoreService = {
+  title: string;
+  description: string;
+  benefits: string[];
+  image: { src: string; alt: string };
+};
+
+export const coreServices: CoreService[] = [
+  {
+    title: "Commercial Construction",
+    description:
+      "Headquarters, towers, and mixed-use developments engineered to define skylines and perform for decades.",
+    benefits: ["Column-free floor plates", "Fast-track delivery", "LEED-rated performance"],
+    image: {
+      src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
+      alt: "Modern commercial glass tower",
+    },
+  },
+  {
+    title: "Residential Construction",
+    description:
+      "Private estates and luxury residences crafted for uncompromising living, comfort, and privacy.",
+    benefits: ["Bespoke finishes", "Private amenities", "Acoustic & thermal comfort"],
+    image: {
+      src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80",
+      alt: "Luxury contemporary residence",
+    },
+  },
+  {
+    title: "Industrial Construction",
+    description:
+      "Plants, logistics hubs, and advanced facilities engineered for performance, safety, and scale.",
+    benefits: ["High-bay structures", "Automation-ready", "Heavy MEP integration"],
+    image: {
+      src: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80",
+      alt: "Engineer inside a large industrial facility",
+    },
+  },
+  {
+    title: "Architecture & Design",
+    description:
+      "Concept-to-detail design that fuses bold form with structural intelligence and buildability.",
+    benefits: ["Concept to detail", "Structural artistry", "Regulatory mastery"],
+    image: {
+      src: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1600&q=80",
+      alt: "Striking modern architectural facade",
+    },
+  },
+  {
+    title: "Infrastructure Development",
+    description:
+      "Bridges, transit, and civil works that connect communities and endure the toughest conditions.",
+    benefits: ["Bridges & transit", "Seismic resilience", "Public realm delivery"],
+    image: {
+      src: "https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=1600&q=80",
+      alt: "Large bridge infrastructure under construction",
+    },
+  },
+  {
+    title: "Renovation & Interior Fit-Out",
+    description:
+      "Heritage-sensitive renovation and turnkey interiors delivered with minimal disruption.",
+    benefits: ["Heritage-sensitive", "Turnkey interiors", "Minimal disruption"],
+    image: {
+      src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80",
+      alt: "Refined luxury interior fit-out",
+    },
+  },
+  {
+    title: "Construction Management",
+    description:
+      "End-to-end program delivery, procurement, and quality assurance under a single point of accountability.",
+    benefits: ["Single accountability", "Cost & schedule control", "Proactive risk management"],
+    image: {
+      src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80",
+      alt: "Project team reviewing construction plans",
+    },
+  },
+  {
+    title: "Design-Build Solutions",
+    description:
+      "A single contract uniting design and construction for faster delivery and aligned incentives.",
+    benefits: ["One contract", "Faster delivery", "Aligned incentives"],
+    image: {
+      src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80",
+      alt: "Cranes over an integrated design-build development",
+    },
+  },
+];
+
+export type IndustryIconKey =
+  | "commercial"
+  | "residential"
+  | "industrial"
+  | "healthcare"
+  | "education"
+  | "government"
+  | "hospitality"
+  | "infrastructure";
+
+export type Industry = { icon: IndustryIconKey; title: string; description: string };
+
+export const industries: Industry[] = [
+  { icon: "commercial", title: "Commercial", description: "Offices, towers, and mixed-use landmarks." },
+  { icon: "residential", title: "Residential", description: "Luxury homes and private developments." },
+  { icon: "industrial", title: "Industrial", description: "Plants, logistics, and advanced facilities." },
+  { icon: "healthcare", title: "Healthcare", description: "Hospitals and specialist medical facilities." },
+  { icon: "education", title: "Education", description: "Campuses, research, and learning spaces." },
+  { icon: "government", title: "Government", description: "Civic, defence, and public institutions." },
+  { icon: "hospitality", title: "Hospitality", description: "Hotels, resorts, and leisure destinations." },
+  { icon: "infrastructure", title: "Infrastructure", description: "Bridges, transit, and civil works." },
+];
+
+export type WhyIconKey =
+  | "experience"
+  | "innovation"
+  | "safety"
+  | "transparency"
+  | "communication"
+  | "quality"
+  | "delivery"
+  | "satisfaction";
+
+export type WhyClient = { icon: WhyIconKey; title: string; description: string };
+
+export const whyClients: WhyClient[] = [
+  { icon: "experience", title: "Proven Experience", description: "Nearly three decades and 240+ delivered landmarks." },
+  { icon: "innovation", title: "Innovation", description: "Digital-twin engineering and smart construction." },
+  { icon: "safety", title: "Safety First", description: "A zero-harm culture protecting every site." },
+  { icon: "transparency", title: "Transparency", description: "Open books, real-time reporting, no surprises." },
+  { icon: "communication", title: "Communication", description: "One point of contact, always responsive." },
+  { icon: "quality", title: "Uncompromising Quality", description: "Detailing and finish that endure for generations." },
+  { icon: "delivery", title: "Timely Delivery", description: "Disciplined programs that land on schedule." },
+  { icon: "satisfaction", title: "Client Satisfaction", description: "A 99% client-retention track record." },
+];
+
+export type Faq = { question: string; answer: string };
+
+export const faqs: Faq[] = [
+  {
+    question: "What types of projects does Titanium Edge take on?",
+    answer:
+      "We deliver commercial, residential, industrial, and infrastructure projects — from luxury residences and corporate towers to bridges and advanced facilities — as well as architecture, fit-out, and full design-build solutions.",
+  },
+  {
+    question: "How do you ensure projects stay on time and on budget?",
+    answer:
+      "Every project runs on rigorous program management, digital-twin modelling, and real-time dashboards. Clashes and risks are resolved before they reach site, and stakeholders share a single, transparent source of truth throughout.",
+  },
+  {
+    question: "Do you offer design and construction under one contract?",
+    answer:
+      "Yes. Our design-build service unites architecture, engineering, and construction under a single point of accountability — accelerating delivery and aligning every incentive around your outcome.",
+  },
+  {
+    question: "How does Titanium Edge approach sustainability?",
+    answer:
+      "Sustainability is standard, not an upgrade. We use LEED-accredited methods, energy modelling, low-carbon materials, and circular strategies, with more than 50 certified projects to date.",
+  },
+  {
+    question: "Which regions do you operate in?",
+    answer:
+      "Titanium Edge delivers projects across more than 40 countries, with teams and supply chains established throughout the Americas, Europe, the Middle East, and Asia.",
+  },
+  {
+    question: "How do we start a project with Titanium Edge?",
+    answer:
+      "Begin with a consultation. Share your vision, site, and ambitions, and our team will shape a tailored approach, program, and budget before a single line is drawn.",
+  },
+];
