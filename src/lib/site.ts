@@ -550,3 +550,123 @@ export const milestones: Milestone[] = [
   { year: "2020", title: "Digital Engineering", description: "Launch of our digital-twin and automation engineering division." },
   { year: "2024", title: "A Global Standard", description: "Our 240th landmark is delivered; named Global Builder of the Year." },
 ];
+
+/* ------------------------------------------------------------------ *
+ * About — Core Values
+ * ------------------------------------------------------------------ */
+export type ValueIconKey =
+  | "integrity"
+  | "innovation"
+  | "excellence"
+  | "safety"
+  | "collaboration"
+  | "sustainability";
+
+export type ValueCard = { icon: ValueIconKey; title: string; description: string };
+
+export const coreValueCards: ValueCard[] = [
+  {
+    icon: "integrity",
+    title: "Integrity",
+    description: "We do what we say — transparent in every estimate, honest in every update, accountable for every outcome.",
+  },
+  {
+    icon: "innovation",
+    title: "Innovation",
+    description: "We challenge convention with digital engineering and new methods that push what construction can achieve.",
+  },
+  {
+    icon: "excellence",
+    title: "Excellence",
+    description: "Nothing leaves our hands until it exceeds the standard — in detail, durability, and finish.",
+  },
+  {
+    icon: "safety",
+    title: "Safety",
+    description: "Every decision protects the people on our sites. A zero-harm culture is non-negotiable.",
+  },
+  {
+    icon: "collaboration",
+    title: "Collaboration",
+    description: "We build alongside clients, architects, and communities as one aligned, trusted team.",
+  },
+  {
+    icon: "sustainability",
+    title: "Sustainability",
+    description: "We build responsibly today for the world of tomorrow — efficient, certified, and future-ready.",
+  },
+];
+
+/* ------------------------------------------------------------------ *
+ * About — Innovation & Technology
+ * ------------------------------------------------------------------ */
+export type TechIconKey = "bim" | "digital" | "smart" | "materials" | "management";
+export type Innovation = { icon: TechIconKey; title: string; description: string };
+
+export const innovations: Innovation[] = [
+  {
+    icon: "bim",
+    title: "BIM & Digital Twins",
+    description: "Every project is modelled end-to-end, so clashes are solved on screen before they cost time on site.",
+  },
+  {
+    icon: "digital",
+    title: "Digital Engineering",
+    description: "Advanced structural and MEP simulation resolves the most complex systems with precision.",
+  },
+  {
+    icon: "smart",
+    title: "Smart Construction",
+    description: "On-site automation, robotics, and IoT sensing keep quality, safety, and schedule in lockstep.",
+  },
+  {
+    icon: "materials",
+    title: "Sustainable Materials",
+    description: "Low-carbon concrete, responsibly sourced steel, and high-performance envelopes as standard.",
+  },
+  {
+    icon: "management",
+    title: "Advanced Project Management",
+    description: "Real-time dashboards give every stakeholder a single, transparent source of truth.",
+  },
+];
+
+/* ------------------------------------------------------------------ *
+ * About — Safety & Sustainability
+ * ------------------------------------------------------------------ */
+export type SafetyIconKey = "worker" | "environment" | "green" | "quality" | "compliance";
+export type SafetyItem = { icon: SafetyIconKey; title: string; description: string };
+
+export const safetyItems: SafetyItem[] = [
+  {
+    icon: "worker",
+    title: "Worker Safety",
+    description: "A zero-harm culture backed by rigorous training, protocols, and daily on-site accountability.",
+  },
+  {
+    icon: "environment",
+    title: "Environmental Responsibility",
+    description: "We measure and minimise impact across every phase, from procurement to handover.",
+  },
+  {
+    icon: "green",
+    title: "Green Building Practices",
+    description: "LEED-accredited methods, energy modelling, and circular material strategies as default.",
+  },
+  {
+    icon: "quality",
+    title: "Quality Assurance",
+    description: "Independent inspection and commissioning verify every element against exacting standards.",
+  },
+  {
+    icon: "compliance",
+    title: "Compliance Standards",
+    description: "ISO-certified systems ensure full regulatory alignment in every market we operate.",
+  },
+];
+
+export const safetyStats: Stat[] = [
+  { value: 0, label: "Lost-Time Incident Target" },
+  { value: 50, suffix: "+", label: "LEED-Certified Projects" },
+  { value: 100, suffix: "%", label: "ISO-Compliant Delivery" },
+];
