@@ -12,8 +12,17 @@ export const site = {
   url: "https://titaniumedge.com",
   email: "projects@titaniumedge.com",
   phone: "+1 (212) 555-0184",
+  address: "1 Titanium Plaza, 48th Floor, New York, NY 10018",
   locale: "en_US",
 } as const;
+
+export type SocialKey = "linkedin" | "instagram" | "youtube" | "x";
+export const socials: { key: SocialKey; label: string; href: string }[] = [
+  { key: "linkedin", label: "LinkedIn", href: "https://linkedin.com" },
+  { key: "instagram", label: "Instagram", href: "https://instagram.com" },
+  { key: "youtube", label: "YouTube", href: "https://youtube.com" },
+  { key: "x", label: "X", href: "https://x.com" },
+];
 
 export type NavLink = {
   label: string;
@@ -213,3 +222,197 @@ export const homeStats: Stat[] = [
   { value: 32, label: "Industry Awards" },
   { value: 99, suffix: "%", label: "Client Satisfaction" },
 ];
+
+/* ------------------------------------------------------------------ *
+ * Home — Featured Projects
+ * ------------------------------------------------------------------ */
+export type Project = {
+  name: string;
+  location: string;
+  category: string;
+  description: string;
+  image: { src: string; alt: string };
+};
+
+export const featuredProjects: Project[] = [
+  {
+    name: "Aurelia Financial Tower",
+    location: "New York, USA",
+    category: "Commercial",
+    description:
+      "A 62-storey headquarters clad in fluted bronze glass, engineered for LEED Platinum performance and a column-free trading floor.",
+    image: {
+      src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80",
+      alt: "Aurelia Financial Tower — commercial high-rise",
+    },
+  },
+  {
+    name: "The Meridian Residences",
+    location: "Dubai, UAE",
+    category: "Residential",
+    description:
+      "Two sculpted residential towers with sky gardens, private elevators, and a suspended infinity pool bridging both crowns.",
+    image: {
+      src: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=80",
+      alt: "The Meridian Residences — luxury residential towers",
+    },
+  },
+  {
+    name: "Northgate Logistics Park",
+    location: "Rotterdam, NL",
+    category: "Industrial",
+    description:
+      "A 340,000 m² automated logistics campus with robotic fulfilment, solar canopies, and rail-served distribution.",
+    image: {
+      src: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1600&q=80",
+      alt: "Northgate Logistics Park — industrial facility",
+    },
+  },
+  {
+    name: "Vantage Cable Bridge",
+    location: "Lisbon, PT",
+    category: "Infrastructure",
+    description:
+      "A 1.2 km cable-stayed crossing with twin diamond pylons, designed for seismic resilience and record clear spans.",
+    image: {
+      src: "https://images.unsplash.com/photo-1545459720-aac8509eb02c?auto=format&fit=crop&w=1600&q=80",
+      alt: "Vantage Cable Bridge — infrastructure landmark",
+    },
+  },
+];
+
+/* ------------------------------------------------------------------ *
+ * Home — Construction Process
+ * ------------------------------------------------------------------ */
+export type ProcessIconKey =
+  | "consultation"
+  | "planning"
+  | "design"
+  | "engineering"
+  | "construction"
+  | "quality"
+  | "delivery";
+
+export type ProcessStage = {
+  icon: ProcessIconKey;
+  title: string;
+  description: string;
+};
+
+export const processStages: ProcessStage[] = [
+  {
+    icon: "consultation",
+    title: "Consultation",
+    description: "We listen first — aligning on vision, budget, and ambition before a single line is drawn.",
+  },
+  {
+    icon: "planning",
+    title: "Planning",
+    description: "Feasibility, programming, and risk modelling establish a clear, deliverable roadmap.",
+  },
+  {
+    icon: "design",
+    title: "Design",
+    description: "Architecture and interiors are shaped into a cohesive, buildable expression of the brief.",
+  },
+  {
+    icon: "engineering",
+    title: "Engineering",
+    description: "Structural, MEP, and digital-twin engineering resolve every system with precision.",
+  },
+  {
+    icon: "construction",
+    title: "Construction",
+    description: "Master trades execute on site under disciplined program and quality control.",
+  },
+  {
+    icon: "quality",
+    title: "Quality Assurance",
+    description: "Independent inspection and commissioning verify every element against exacting standards.",
+  },
+  {
+    icon: "delivery",
+    title: "Project Delivery",
+    description: "A seamless handover — documented, warrantied, and supported for the life of the asset.",
+  },
+];
+
+/* ------------------------------------------------------------------ *
+ * Home — Testimonials
+ * ------------------------------------------------------------------ */
+export type Testimonial = {
+  name: string;
+  position: string;
+  company: string;
+  rating: number;
+  review: string;
+  photo?: { src: string; alt: string };
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    name: "Eleanor Whitfield",
+    position: "Chief Development Officer",
+    company: "Harborline Group",
+    rating: 5,
+    review:
+      "Titanium Edge delivered our flagship tower ahead of schedule and beyond specification. Their engineering discipline and finish quality are simply in a class of their own.",
+  },
+  {
+    name: "Marcus Delacroix",
+    position: "Managing Partner",
+    company: "Delacroix Capital",
+    rating: 5,
+    review:
+      "Every phase felt effortless because their planning was flawless. The transparency and communication gave our investors complete confidence throughout.",
+  },
+  {
+    name: "Aisha Rahman",
+    position: "Director of Infrastructure",
+    company: "Meridian Authority",
+    rating: 5,
+    review:
+      "A complex, high-risk civil project handled with remarkable calm and precision. Safety and quality were never compromised for speed.",
+  },
+  {
+    name: "Johan Berg",
+    position: "CEO",
+    company: "Northgate Industries",
+    rating: 5,
+    review:
+      "The most technically capable contractor we have worked with. Their digital-twin approach saved months and eliminated costly surprises.",
+  },
+  {
+    name: "Sofia Marchetti",
+    position: "Principal Architect",
+    company: "Studio Marchetti",
+    rating: 5,
+    review:
+      "They protected the integrity of our design at every turn. Craftsmanship of this calibre is exceptionally rare in construction today.",
+  },
+];
+
+/* ------------------------------------------------------------------ *
+ * Home — Awards & Certifications
+ * ------------------------------------------------------------------ */
+export type AwardIconKey = "trophy" | "safety" | "quality" | "engineering" | "sustainability";
+
+export type Award = {
+  icon: AwardIconKey;
+  title: string;
+  detail: string;
+};
+
+export const awards: Award[] = [
+  { icon: "trophy", title: "Global Builder of the Year", detail: "International Construction Awards" },
+  { icon: "safety", title: "Zero-Harm Safety Standard", detail: "OHSAS 45001 Certified" },
+  { icon: "quality", title: "Quality Management", detail: "ISO 9001:2015 Certified" },
+  { icon: "engineering", title: "Engineering Excellence", detail: "Institution of Structural Engineers" },
+  { icon: "sustainability", title: "Sustainable Development", detail: "LEED Platinum Accreditation" },
+];
+
+/** Final call-to-action background imagery. */
+export const ctaMedia = {
+  src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2400&q=80",
+  alt: "Tower cranes over a skyline development at dusk",
+};

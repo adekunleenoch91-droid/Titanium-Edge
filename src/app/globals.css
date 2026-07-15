@@ -168,6 +168,27 @@
   }
 }
 
+/* Pausable marquee (testimonials / keyword rails) */
+@keyframes te-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.te-marquee-track {
+  animation: te-marquee var(--marquee-duration, 50s) linear infinite;
+  width: max-content;
+}
+.te-marquee-mask:hover .te-marquee-track {
+  animation-play-state: paused;
+}
+.edge-fade-x {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
 /* Respect reduced-motion globally */
 @media (prefers-reduced-motion: reduce) {
   *,
