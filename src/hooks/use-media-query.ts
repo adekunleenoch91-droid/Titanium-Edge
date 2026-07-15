@@ -1,0 +1,28 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+/** Subscribe to a CSS media query. SSR-safe (returns `false` until mounted). */
+export function useMediaQuery(query: string): boolean {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const mql = window.matchMedia(query);
+    const onChange = () => setMatches(mql.matches);
+    onChange();
+    mql.addEventListener("change", onChange);
+    return () => mql.removeEventListener("change", onChange);
+  }, [query]);
+
+  return matches;
+}
+
+/** True when the viewport is at or below the given breakpoint (default: lg). */
+export function useIsMobile(maxWidth = 1023) {
+  return useMediaQuery(`(max-width: ${maxWidth}px)`);
+}
+
+/** True when the user prefers reduced motion — gate heavy animation on this. */
+export function usePrefersReducedMotion() {
+  return useMediaQuery("(prefers-reduced-motion: reduce)");
+}
