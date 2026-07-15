@@ -416,3 +416,137 @@ export const ctaMedia = {
   src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2400&q=80",
   alt: "Tower cranes over a skyline development at dusk",
 };
+
+/* ================================================================== *
+ * ABOUT PAGE
+ * ================================================================== */
+
+export const aboutPage = {
+  hero: {
+    eyebrow: "About Titanium Edge",
+    title: "We build what the",
+    goldTitle: "future remembers",
+    intro:
+      "Founded on the belief that construction is a craft, not a commodity, Titanium Edge has spent nearly three decades turning the world's most ambitious visions into enduring landmarks.",
+    image: {
+      src: "https://images.unsplash.com/photo-1590644365607-1c5a0b8c0f0f?auto=format&fit=crop&w=2400&q=80",
+      alt: "Steel framework of a skyscraper rising against the sky",
+    },
+    stats: [
+      { value: 1997, label: "Founded" },
+      { value: 240, suffix: "+", label: "Landmarks Delivered" },
+      { value: 40, suffix: "+", label: "Countries" },
+    ] as Stat[],
+  },
+  story: {
+    eyebrow: "Our Story",
+    title: "From a single blueprint to a global standard",
+    paragraphs: [
+      "Titanium Edge began in 1997 with a small team of engineers who refused to accept that speed and quality were opposing forces. That conviction became a company — and then an ethos.",
+      "Today we deliver commercial, residential, industrial, and infrastructure projects across more than forty countries, uniting master craftsmanship with the most advanced engineering and construction technology in the industry.",
+      "Through every era, one thing has never changed: we treat each project as a promise, and each structure as a legacy we sign with our name.",
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80",
+      alt: "Engineers reviewing plans on an active construction site",
+    },
+  },
+};
+
+export type PillarKey = "mission" | "vision" | "values";
+export type Pillar = {
+  key: PillarKey;
+  label: string;
+  title: string;
+  description: string;
+};
+
+export const pillars: Pillar[] = [
+  {
+    key: "mission",
+    label: "Our Mission",
+    title: "Engineer landmarks that elevate how the world lives and works",
+    description:
+      "We exist to transform bold visions into structures of lasting value — delivered with precision, integrity, and uncompromising craftsmanship.",
+  },
+  {
+    key: "vision",
+    label: "Our Vision",
+    title: "To be the most trusted name in luxury construction",
+    description:
+      "A global standard synonymous with engineering excellence, safety, and quality that endures for generations.",
+  },
+  {
+    key: "values",
+    label: "Our Approach",
+    title: "Partnership over transaction, always",
+    description:
+      "We build relationships as carefully as we build structures — transparent, accountable, and invested in every outcome.",
+  },
+];
+
+export const coreValues: string[] = [
+  "Integrity",
+  "Precision",
+  "Innovation",
+  "Safety",
+  "Sustainability",
+  "Craftsmanship",
+];
+
+export type Leader = {
+  name: string;
+  role: string;
+  bio: string;
+  photo: { src: string; alt: string };
+};
+
+export const leadership: Leader[] = [
+  {
+    name: "Julian Hart",
+    role: "Founder & Chief Executive",
+    bio: "Structural engineer turned builder, Julian has led Titanium Edge from a single studio to a global firm.",
+    photo: {
+      src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
+      alt: "Portrait of Julian Hart, Founder & Chief Executive",
+    },
+  },
+  {
+    name: "Amara Okafor",
+    role: "Chief Engineering Officer",
+    bio: "Amara directs the engineering and digital-twin division behind our most complex projects.",
+    photo: {
+      src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+      alt: "Portrait of Amara Okafor, Chief Engineering Officer",
+    },
+  },
+  {
+    name: "Viktor Reyes",
+    role: "Chief Operating Officer",
+    bio: "Viktor oversees delivery, safety, and program management across every active site worldwide.",
+    photo: {
+      src: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80",
+      alt: "Portrait of Viktor Reyes, Chief Operating Officer",
+    },
+  },
+  {
+    name: "Lena Fischer",
+    role: "Head of Design & Architecture",
+    bio: "Lena leads the studio shaping the form, materiality, and detail of every Titanium Edge landmark.",
+    photo: {
+      src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80",
+      alt: "Portrait of Lena Fischer, Head of Design & Architecture",
+    },
+  },
+];
+
+export type Milestone = { year: string; title: string; description: string };
+
+export const milestones: Milestone[] = [
+  { year: "1997", title: "The Foundation", description: "Titanium Edge is founded in New York by a team of six engineers." },
+  { year: "2004", title: "First Supertall", description: "Delivery of our first 300m+ tower sets a new benchmark for the firm." },
+  { year: "2011", title: "Global Expansion", description: "Operations extend across Europe, the Middle East, and Asia." },
+  { year: "2016", title: "Sustainability Milestone", description: "Our portfolio surpasses 50 LEED-certified projects." },
+  { year: "2020", title: "Digital Engineering", description: "Launch of our digital-twin and automation engineering division." },
+  { year: "2024", title: "A Global Standard", description: "Our 240th landmark is delivered; named Global Builder of the Year." },
+];
