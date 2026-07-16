@@ -131,7 +131,7 @@ function CameraRig() {
   return null;
 }
 
-function Scene() {
+function Scene({ particleCount }: { particleCount: number }) {
   return (
     <>
       <color attach="background" args={["#050505"]} />
@@ -143,21 +143,27 @@ function Scene() {
 
       <SteelStructure />
       <BlueprintWireframe />
-      <Particles />
+      <Particles count={particleCount} />
       <CameraRig />
     </>
   );
 }
 
 export default function HeroScene() {
+  // Lighten the scene on phones/tablets to protect battery and framerate.
+  const small = typeof window !== "undefined" && window.innerWidth < 768;
+  const dpr: [number, number] = small ? [1, 1.3] : [1, 1.8];
+  const particleCount = small ? 90 : 220;
+
   return (
     <Canvas
-      dpr={[1, 1.8]}
-      gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+      dpr={dpr}
+      performance={{ min: 0.5 }}
+      gl={{ antialias: !small, alpha: true, powerPreference: "high-performance" }}
       camera={{ position: [0, 0, 7], fov: 42 }}
       style={{ width: "100%", height: "100%" }}
     >
-      <Scene />
+      <Scene particleCount={particleCount} />
     </Canvas>
   );
 }

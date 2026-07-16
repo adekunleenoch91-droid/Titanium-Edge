@@ -56,10 +56,12 @@ function Particles({ count = 90 }: { count?: number }) {
 }
 
 export default function TechScene() {
+  const small = typeof window !== "undefined" && window.innerWidth < 768;
   return (
     <Canvas
-      dpr={[1, 1.6]}
-      gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+      dpr={small ? [1, 1.2] : [1, 1.6]}
+      performance={{ min: 0.5 }}
+      gl={{ antialias: !small, alpha: true, powerPreference: "high-performance" }}
       camera={{ position: [0, 0, 5], fov: 45 }}
       style={{ width: "100%", height: "100%" }}
     >
@@ -67,7 +69,7 @@ export default function TechScene() {
       <Float speed={1.2} rotationIntensity={0.4} floatIntensity={0.8}>
         <Knot />
       </Float>
-      <Particles />
+      <Particles count={small ? 45 : 90} />
     </Canvas>
   );
 }

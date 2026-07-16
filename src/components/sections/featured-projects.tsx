@@ -86,8 +86,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             <TextReveal text={project.name} />
           </h3>
 
-          {/* Expanding description */}
-          <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-luxe-out group-hover/proj:mt-4 group-hover/proj:grid-rows-[1fr] group-hover/proj:opacity-100">
+          {/* Description: always visible on touch/small screens; hover-expands on lg+ */}
+          <div className="mt-4 grid grid-rows-[1fr] opacity-100 transition-all duration-500 ease-luxe-out lg:mt-0 lg:grid-rows-[0fr] lg:opacity-0 lg:group-hover/proj:mt-4 lg:group-hover/proj:grid-rows-[1fr] lg:group-hover/proj:opacity-100">
             <p className="overflow-hidden max-w-md text-sm leading-relaxed text-ink-dim">
               {project.description}
             </p>
