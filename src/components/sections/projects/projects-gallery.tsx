@@ -129,6 +129,7 @@ export function ProjectsGallery() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, ease: EASE.out, delay: (i % 3) * 0.08 }}
               onClick={() => setOpen(i)}
+              data-cursor="View"
               className="group/g relative mb-5 block w-full break-inside-avoid overflow-hidden rounded-3xl border border-line shadow-soft transition-all duration-500 ease-luxe-out hover:border-line-gold hover:shadow-gold-glow"
             >
               <div className={cn("relative w-full", ASPECT[img.span])}>

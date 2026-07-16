@@ -38,6 +38,7 @@ function TiltImage({ project }: { project: FeaturedProject }) {
         ref={ref}
         onMouseMove={onMove}
         onMouseLeave={reset}
+        data-cursor="View"
         style={{ rotateX: srx, rotateY: sry, transformPerspective: 1200 }}
         initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
         whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}

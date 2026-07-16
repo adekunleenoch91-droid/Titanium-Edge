@@ -22,6 +22,7 @@ function PortfolioCard({ item }: { item: PortfolioItem }) {
     >
       <Link
         href="/contact"
+        data-cursor="View"
         className="group/pf relative block overflow-hidden rounded-4xl border border-line bg-card/50 transition-all duration-500 ease-luxe-out hover:-translate-y-1.5 hover:border-line-gold hover:shadow-gold-glow"
       >
         <div className="relative aspect-[4/5] w-full overflow-hidden">

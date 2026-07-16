@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter, Manrope } from "next/font/google";
+import { MotionConfig } from "framer-motion";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
+import { Preloader } from "@/components/providers/preloader";
+import { ScrollProgress } from "@/components/providers/scroll-progress";
+import { CustomCursor } from "@/components/providers/custom-cursor";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { site } from "@/lib/site";
@@ -82,11 +86,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
-        <SmoothScrollProvider>
-          <Navbar />
-          <main id="main">{children}</main>
-          <Footer />
-        </SmoothScrollProvider>
+        <MotionConfig reducedMotion="user">
+          <Preloader />
+          <ScrollProgress />
+          <CustomCursor />
+          <SmoothScrollProvider>
+            <Navbar />
+            <main id="main">{children}</main>
+            <Footer />
+          </SmoothScrollProvider>
+        </MotionConfig>
       </body>
     </html>
   );
