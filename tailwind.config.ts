@@ -62,7 +62,8 @@ const config: Config = {
           DEFAULT: "#FFFFFF",
           muted: "#C9CDD3",
           dim: "#8A909B",
-          faint: "#5B616C",
+          // Lightened from #5B616C to meet WCAG AA (4.5:1) on the dark bg.
+          faint: "#787E88",
         },
         line: {
           DEFAULT: "rgba(255,255,255,0.08)",
