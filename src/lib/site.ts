@@ -1131,3 +1131,106 @@ export const faqs: Faq[] = [
       "Begin with a consultation. Share your vision, site, and ambitions, and our team will shape a tailored approach, program, and budget before a single line is drawn.",
   },
 ];
+
+/* ================================================================== *
+ * CONTACT PAGE
+ * ================================================================== */
+
+export const contactPage = {
+  hero: {
+    eyebrow: "Contact",
+    title: "Let's build something",
+    goldTitle: "worth remembering",
+    intro:
+      "Every landmark begins with a conversation. Tell us about your vision, and our team will help you shape it into a plan — and then into reality.",
+    image: {
+      src: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2400&q=80",
+      alt: "Modern architectural office interior with warm lighting",
+    },
+  },
+  intro: {
+    eyebrow: "Start the Conversation",
+    title: "We welcome ambitious projects of every scale",
+    lead:
+      "From commercial towers and luxury residences to industrial facilities and critical infrastructure, our team is ready to bring the same precision and care to your next landmark.",
+    points: [
+      "Commercial & mixed-use developments",
+      "Luxury residential projects",
+      "Industrial & logistics facilities",
+      "Infrastructure & civil works",
+    ],
+  },
+};
+
+export const projectTypes = [
+  "Commercial Construction",
+  "Residential Construction",
+  "Industrial Construction",
+  "Infrastructure Development",
+  "Architecture & Design",
+  "Renovation & Fit-Out",
+  "Other",
+] as const;
+
+export const budgetRanges = [
+  "Under $5M",
+  "$5M – $25M",
+  "$25M – $100M",
+  "$100M+",
+  "To be discussed",
+] as const;
+
+export const timelines = [
+  "As soon as possible",
+  "1 – 3 months",
+  "3 – 6 months",
+  "6 – 12 months",
+  "12+ months",
+] as const;
+
+export type OfficeIconKey = "hq" | "phone" | "email" | "hours" | "emergency";
+export type OfficeCard = { icon: OfficeIconKey; title: string; lines: string[]; href?: string };
+
+export const officeCards: OfficeCard[] = [
+  { icon: "hq", title: "Headquarters", lines: ["1 Titanium Plaza, 48th Floor", "New York, NY 10018"] },
+  { icon: "phone", title: "Phone", lines: [site.phone, "Mon – Fri, 9am – 6pm EST"], href: `tel:${site.phone.replace(/\s/g, "")}` },
+  { icon: "email", title: "Email", lines: [site.email, "We reply within 24 hours"], href: `mailto:${site.email}` },
+  { icon: "hours", title: "Business Hours", lines: ["Mon – Fri: 9:00 – 18:00", "Saturday: 10:00 – 14:00"] },
+  { icon: "emergency", title: "Emergency Contact", lines: ["+1 (212) 555-0199", "24/7 active-project support"], href: "tel:+12125550199" },
+];
+
+export const mapInfo = {
+  label: "Titanium Edge — Headquarters",
+  address: site.address,
+  // Approximate Midtown Manhattan coordinates for the branded marker demo.
+  directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Titanium+Plaza+New+York+NY+10018",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=1+Titanium+Plaza+New+York+NY+10018",
+};
+
+export const contactFaqs: Faq[] = [
+  {
+    question: "How do I start a project with Titanium Edge?",
+    answer:
+      "Send us an enquiry through the form or book a consultation. We'll arrange an introductory call to understand your vision, site, and objectives, then propose a tailored approach and program.",
+  },
+  {
+    question: "What industries and project types do you serve?",
+    answer:
+      "We deliver commercial, residential, industrial, and infrastructure projects — spanning offices, luxury homes, healthcare, education, hospitality, government, and civil works — plus architecture, fit-out, and design-build.",
+  },
+  {
+    question: "How long do projects typically take?",
+    answer:
+      "Timelines depend on scale and complexity, but every project runs on a disciplined program with clear milestones. We'll give you a realistic schedule during the consultation and protect it throughout delivery.",
+  },
+  {
+    question: "Do you work internationally?",
+    answer:
+      "Yes. Titanium Edge delivers projects across more than 40 countries, with established teams and supply chains throughout the Americas, Europe, the Middle East, and Asia.",
+  },
+  {
+    question: "How do consultations work?",
+    answer:
+      "Consultations are complimentary and confidential. You'll meet directly with senior members of our team who will explore feasibility, budget, and approach — with no obligation to proceed.",
+  },
+];
