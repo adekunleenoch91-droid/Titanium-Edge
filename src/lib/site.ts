@@ -485,15 +485,6 @@ export const pillars: Pillar[] = [
   },
 ];
 
-export const coreValues: string[] = [
-  "Integrity",
-  "Precision",
-  "Innovation",
-  "Safety",
-  "Sustainability",
-  "Craftsmanship",
-];
-
 export type Leader = {
   name: string;
   role: string;

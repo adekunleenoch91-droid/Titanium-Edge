@@ -17,11 +17,6 @@ export function useMediaQuery(query: string): boolean {
   return matches;
 }
 
-/** True when the viewport is at or below the given breakpoint (default: lg). */
-export function useIsMobile(maxWidth = 1023) {
-  return useMediaQuery(`(max-width: ${maxWidth}px)`);
-}
-
 /** True when the user prefers reduced motion — gate heavy animation on this. */
 export function usePrefersReducedMotion() {
   return useMediaQuery("(prefers-reduced-motion: reduce)");

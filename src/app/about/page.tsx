@@ -9,10 +9,14 @@ import { AboutInnovation } from "@/components/sections/about/about-innovation";
 import { AboutSafety } from "@/components/sections/about/about-safety";
 import { FinalCta } from "@/components/sections/final-cta";
 
+const description =
+  "For nearly three decades, Titanium Edge has turned the world's most ambitious visions into enduring landmarks — uniting master craftsmanship with advanced engineering, safety, and sustainability.";
+
 export const metadata: Metadata = {
   title: "About",
-  description:
-    "For nearly three decades, Titanium Edge has turned the world's most ambitious visions into enduring landmarks — uniting master craftsmanship with advanced engineering, safety, and sustainability.",
+  description,
+  alternates: { canonical: "/about" },
+  openGraph: { title: "About — Titanium Edge", description, url: "/about" },
 };
 
 export default function AboutPage() {

@@ -8,10 +8,14 @@ import { ServicesWhy } from "@/components/sections/services/services-why";
 import { ServicesFaq } from "@/components/sections/services/services-faq";
 import { FinalCta } from "@/components/sections/final-cta";
 
+const description =
+  "From commercial and residential to industrial, infrastructure, architecture, and design-build — explore the full spectrum of Titanium Edge's construction and engineering services.";
+
 export const metadata: Metadata = {
   title: "Services",
-  description:
-    "From commercial and residential to industrial, infrastructure, architecture, and design-build — explore the full spectrum of Titanium Edge's construction and engineering services.",
+  description,
+  alternates: { canonical: "/services" },
+  openGraph: { title: "Services — Titanium Edge", description, url: "/services" },
 };
 
 export default function ServicesPage() {

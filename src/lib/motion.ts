@@ -1,5 +1,3 @@
-import type { Variants } from "framer-motion";
-
 /**
  * Titanium Edge — Motion System
  * One shared language of easing + timing so every animation feels like
@@ -33,43 +31,6 @@ export const STAGGER = {
   tight: 0.06,
   base: 0.09,
   loose: 0.14,
-};
-
-/** Fade + rise. The house default for content reveal. */
-export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 28 },
-  visible: (i: number = 0) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: DURATION.base, ease: EASE.out, delay: i * STAGGER.base },
-  }),
-};
-
-/** Container that staggers its children. */
-export const stagger: Variants = {
-  hidden: {},
-  visible: (stagger: number = STAGGER.base) => ({
-    transition: { staggerChildren: stagger, delayChildren: 0.05 },
-  }),
-};
-
-/** Line-mask reveal (used with an overflow-hidden wrapper). */
-export const maskUp: Variants = {
-  hidden: { y: "115%" },
-  visible: (i: number = 0) => ({
-    y: "0%",
-    transition: { duration: DURATION.slow, ease: EASE.out, delay: i * STAGGER.base },
-  }),
-};
-
-/** Gentle scale-in for imagery / cards. */
-export const scaleIn: Variants = {
-  hidden: { opacity: 0, scale: 1.06 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: DURATION.cinematic, ease: EASE.out },
-  },
 };
 
 /** Shared viewport config so reveals trigger consistently. */

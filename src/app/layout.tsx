@@ -7,8 +7,27 @@ import { ScrollProgress } from "@/components/providers/scroll-progress";
 import { CustomCursor } from "@/components/providers/custom-cursor";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { site } from "@/lib/site";
+import { site, socials } from "@/lib/site";
 import "./globals.css";
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: site.name,
+  url: site.url,
+  description: site.description,
+  email: site.email,
+  telephone: site.phone,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1 Titanium Plaza, 48th Floor",
+    addressLocality: "New York",
+    addressRegion: "NY",
+    postalCode: "10018",
+    addressCountry: "US",
+  },
+  sameAs: socials.map((s) => s.href),
+};
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -49,6 +68,10 @@ export const metadata: Metadata = {
     "Titanium Edge",
   ],
   authors: [{ name: site.name }],
+  creator: site.name,
+  publisher: site.name,
+  alternates: { canonical: "/" },
+  category: "Construction & Engineering",
   openGraph: {
     type: "website",
     locale: site.locale,
@@ -62,7 +85,11 @@ export const metadata: Metadata = {
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
 };
 
 export const viewport: Viewport = {
@@ -80,6 +107,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <body className="bg-background text-ink antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-gold focus:px-5 focus:py-2 focus:font-numeric focus:text-sm focus:text-primary"

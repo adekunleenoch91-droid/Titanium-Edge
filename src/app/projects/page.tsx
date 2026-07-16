@@ -8,10 +8,14 @@ import { ProjectsAchievements } from "@/components/sections/projects/projects-ac
 import { ProjectsSuccess } from "@/components/sections/projects/projects-success";
 import { FinalCta } from "@/components/sections/final-cta";
 
+const description =
+  "Explore Titanium Edge's portfolio of landmark commercial, residential, industrial, and infrastructure projects — each an engineered success story.";
+
 export const metadata: Metadata = {
   title: "Projects",
-  description:
-    "Explore Titanium Edge's portfolio of landmark commercial, residential, industrial, and infrastructure projects — each an engineered success story.",
+  description,
+  alternates: { canonical: "/projects" },
+  openGraph: { title: "Projects — Titanium Edge", description, url: "/projects" },
 };
 
 export default function ProjectsPage() {
